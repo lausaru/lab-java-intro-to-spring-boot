@@ -3,10 +3,7 @@ package controller;
 import model.EmployeeStatus;
 import model.Patient;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import service.PatientService;
 
 import java.util.Date;
@@ -19,12 +16,12 @@ public class PatientController {
     private PatientService patientService;
 
     @GetMapping("/patients")
-    public List<Patient> getDoctors() {
+    public List<Patient> getPatients() {
         return patientService.findAll();
     }
 
     @GetMapping("/patients/{id}")
-    public Optional<Patient> findByPatientId(int patientId) {
+    public Optional<Patient> findByPatientId(@PathVariable int patientId) {
         return patientService.findByPatientId(patientId);
     }
 
