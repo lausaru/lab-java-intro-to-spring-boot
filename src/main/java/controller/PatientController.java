@@ -26,7 +26,7 @@ public class PatientController {
     }
 
     @GetMapping("/patients/date_of_birth_range")
-    public List<Patient> findAllByDateOfBirthBetween(@PathVariable Date minDate, Date maxDate) {
+    public List<Patient> findAllByDateOfBirthBetween(@RequestParam Date minDate, @RequestParam Date maxDate) {
         return patientService.findAllByDateOfBirthBetween(minDate, maxDate);
     }
 
