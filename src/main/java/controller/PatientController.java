@@ -20,9 +20,9 @@ public class PatientController {
         return patientService.findAll();
     }
 
-    @GetMapping("/patients/{patient_id}")
-    public Optional<Patient> findByPatientId(@PathVariable int patientId) {
-        return patientService.findByPatientId(patientId);
+    @GetMapping("/patients/{id}")
+    public Optional<Patient> findByPatientId(@PathVariable int id) {
+        return patientService.findByPatientId(id);
     }
 
     @GetMapping("/patients/date_of_birth_range")
@@ -31,12 +31,12 @@ public class PatientController {
     }
 
     @GetMapping("/patients/department/{department}")
-    public List<Patient> findAllByDoctorDepartment(String department) {
+    public List<Patient> findAllByDoctorDepartment(@PathVariable String department) {
         return patientService.findAllByDoctorDepartment(department);
     }
 
     @GetMapping("/patients/status/{status}")
-    public List<Patient> findAllByDoctorStatus(EmployeeStatus status) {
+    public List<Patient> findAllByDoctorStatus(@PathVariable EmployeeStatus status) {
         return patientService.findAllByDoctorStatus(status);
     }
 

@@ -14,25 +14,23 @@ public class EmployeeController {
     @Autowired
     private EmployeeService employeeService;
 
-    @GetMapping("/employees")
+    @GetMapping("/doctors")
     public List<Employee> getDoctors() {
         return employeeService.findAll();
     }
 
-    @GetMapping("/employees/{employee_id}")
-    public Optional<Employee> findByEmployeeId(@PathVariable int employeeId) {
-        return employeeService.findByEmployeeId(employeeId);
+    @GetMapping("/doctors/{id}")
+    public Optional<Employee> findByEmployeeId(@PathVariable int id) {
+        return employeeService.findByEmployeeId(id);
     }
 
-    @GetMapping("/employees/department/{department}")
+    @GetMapping("/doctors/department/{department}")
     public List<Employee> findByDepartment(@PathVariable String department) {
         return employeeService.findAllByDepartment(department);
     }
 
-    @GetMapping("/employees/status/{status}")
+    @GetMapping("/doctors/status/{status}")
     public List<Employee> findByStatus(@PathVariable EmployeeStatus status) {
         return employeeService.findAllByStatus(status);
     }
-
-
 }
