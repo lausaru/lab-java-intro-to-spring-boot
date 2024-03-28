@@ -33,4 +33,8 @@ public interface PatientRepository extends JpaRepository<Patient,Integer> {
             "WHERE employee.status = :status", nativeQuery = true)
     List<Patient> findAllByDoctorStatus(@Param("status") EmployeeStatus status);
 
+    @Query(value = "SELECT patient.* FROM patient INNER JOIN employee ON patient.admitted_by = employee.employee_id " +
+            "WHERE employee.status = OFF", nativeQuery = true)
+    List<Patient> findAllByDoctorStatusIsOff();
+
 }

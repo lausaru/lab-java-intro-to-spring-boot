@@ -34,4 +34,8 @@ public class PatientService {
     public List<Patient> findAllByDoctorStatus(EmployeeStatus status) {
         return patientRepository.findAllByDoctorStatus(status);
     }
+
+    public List<Patient> findAllByDoctorStatusIsOff() {
+        return patientRepository.findAllByDoctorStatusIsOff();
+    }
 }

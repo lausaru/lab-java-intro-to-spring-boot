@@ -39,4 +39,9 @@ public class PatientController {
     public List<Patient> findAllByDoctorStatus(EmployeeStatus status) {
         return patientService.findAllByDoctorStatus(status);
     }
+
+    @GetMapping("/patients/status_off")
+    public List<Patient> findAllByDoctorStatusIsOff() {
+        return patientService.findAllByDoctorStatusIsOff();
+    }
 }
