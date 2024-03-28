@@ -19,7 +19,7 @@ public class EmployeeController {
         return employeeService.findAll();
     }
 
-    @GetMapping("/employees/{id}")
+    @GetMapping("/employees/{employee_id}")
     public Optional<Employee> findByEmployeeId(@PathVariable int employeeId) {
         return employeeService.findByEmployeeId(employeeId);
     }

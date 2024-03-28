@@ -20,13 +20,13 @@ public class PatientController {
         return patientService.findAll();
     }
 
-    @GetMapping("/patients/{id}")
+    @GetMapping("/patients/{patient_id}")
     public Optional<Patient> findByPatientId(@PathVariable int patientId) {
         return patientService.findByPatientId(patientId);
     }
 
     @GetMapping("/patients/date_of_birth_range")
-    public List<Patient> findAllByDateOfBirthBetween(Date minDate, Date maxDate) {
+    public List<Patient> findAllByDateOfBirthBetween(@PathVariable Date minDate, Date maxDate) {
         return patientService.findAllByDateOfBirthBetween(minDate, maxDate);
     }
 
